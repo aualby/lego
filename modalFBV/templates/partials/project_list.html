@@ -1,0 +1,9 @@
+{% for project in projects %}
+<tr id="project-{{project.pk }}" class="project-row">
+    <td>{{ project.pr_name }}</td>
+    <td>{{ project.pr_number}}</td>
+    <td>
+        <button class="btn btn-primary btn-small" hx-get="{% url 'edit_project' pk=project.pk %}" hx-target="#dialog">Edit</button>
+    </td>
+</tr>
+{% endfor %}
